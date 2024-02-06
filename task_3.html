@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fullscreen API Example</title>
+  <div>
+  <style>
+    #fullscreen-container {
+      width: 300px;
+      height: 200px;
+      border: 2px solid black;
+      text-align: center;
+      padding-top: 80px;
+    }
+  </style>
+  </div>
+</head>
+<body>
+  <div id="fullscreen-container">
+    <p>This is the fullscreen container</p>
+  </div>
+  <br>
+  <button id="toggleFullscreen">Toggle Fullscreen</button>
+
+  <script>
+    var fullscreenContainer = document.getElementById('fullscreen-container');
+    var toggleFullscreenButton = document.getElementById('toggleFullscreen');
+
+    function toggleFullscreen() {
+      if (!document.fullscreenElement) {
+        fullscreenContainer.requestFullscreen();
+      } else {
+        document.exitFullscreen();
+      }
+    }
+
+    toggleFullscreenButton.onclick = toggleFullscreen;
+  </script>
+</body>
+</html>
